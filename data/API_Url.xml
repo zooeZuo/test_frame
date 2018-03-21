@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface>
+    <url name="APD">
+        <group>DP</group>
+        <module>Member</module>
+        <action>asyncPrepareData</action>
+    </url>
+
+    <url name="QPDR">
+        <group>DP</group>
+        <module>Member</module>
+        <action>queryPrepareDataResult</action>
+    </url>
+
+    <url name="GPL">
+        <group>/SHSRC/MI</group>
+        <module>business/1/1</module>
+        <action>GetPrepaymentList</action>
+    </url>
+
+    <url name="GPIL">
+        <group>/SHSRC/MI</group>
+        <module>business/1/1</module>
+        <action>GetProductInformationList</action>
+    </url>
+
+    <url name="GBIL">
+        <group>/SHSRC/MI</group>
+        <module>business/1/1</module>
+        <action>GetBusinessInformationList</action>
+    </url>
+
+    <url name="GBDI">
+        <group>/SHSRC/MI</group>
+        <module>business/1/1</module>
+        <action>GetBusinessDetailedInformation</action>
+    </url>
+
+    <url name="APB">
+        <group>/SHSRC/MI</group>
+        <module>business/1/1</module>
+        <action>ApplyPendingBusiness</action>
+    </url>
+
+    <url name="NBR">
+        <group>/SHSRC/MI</group>
+        <module>business/1/1</module>
+        <action>NotifyBusinessResults</action>
+    </url>
+
+    <url name="SB">
+        <group>/SHSRC/MI</group>
+        <module>business/1/1</module>
+        <action>SubmitBusiness</action>
+    </url>
+
+    <url name="PSR">
+        <group>/SHSRC/MI</group>
+        <module>business/1/1</module>
+        <action>PostScriptResults</action>
+    </url>
+
+    <url name="PAS">
+        <group>/SHSRC/MI</group>
+        <module>TSM/1/1</module>
+        <action>PutApduScripts</action>
+    </url>
+
+    <url name="PAR">
+        <group>/SHSRC/MI</group>
+        <module>TSM/1/1</module>
+        <action>PostApduResults</action>
+    </url>
+
+    <url name="GetScriptsStatus">
+        <group>/SHSRC/MI</group>
+        <module>TSM/1/1</module>
+        <action>GetScriptsStatus</action>
+    </url>
+
+    <url name="CS">
+        <group>/SHSRC/MI</group>
+        <module>TSM/1/1</module>
+        <action>CancelScripts</action>
+    </url>
+</interface>

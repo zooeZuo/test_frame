@@ -1,0 +1,14 @@
+2018-03-20 14:50:58,733 mail.py[line: 73] INFO: attach file D:\test_frame\report\2018-03-20_14_50_57_report.html
+2018-03-20 14:50:58,753 mail.py[line: 96] ERROR: 发送邮件失败,无法连接到SMTP服务器，检查网络以及SMTP服务器. getaddrinfo() argument 2 must be integer or string
+Traceback (most recent call last):
+  File "D:\test_frame\public\mail.py", line 94, in send
+    smtp_server = smtplib.SMTP(self.server,self.port)  # 连接sever
+  File "E:\Python27\lib\smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "E:\Python27\lib\smtplib.py", line 316, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "E:\Python27\lib\smtplib.py", line 291, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "E:\Python27\lib\socket.py", line 557, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+error: getaddrinfo() argument 2 must be integer or string

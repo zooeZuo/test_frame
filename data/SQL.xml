@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<page>
+    <database name="test">
+        <table name="dp">
+            <sql id="1">
+                SELECT * FROM dp WHERE test_id = 1
+            </sql>
+        </table>
+
+        <table name="dp">
+            <sql id="2">
+                DELETE FROM dp WHERE * =1
+            </sql>
+        </table>
+
+        <table name="mi_ap">
+            <sql id="3">
+                SELECT * FROM mi_ap WHERE test_id = 1
+            </sql>
+        </table>
+
+        <table name="tsm">
+            <sql id="4">
+                SELECT * FROM tsm WHERE test_id = %s
+            </sql>
+        </table>
+    </database>
+</page>

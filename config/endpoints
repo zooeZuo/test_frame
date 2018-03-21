@@ -1,0 +1,16 @@
+#dp/asyncPrepareData
+#dp/queryPrepareDataResult
+
+#SHSRC/MI/business/1/1/GetPrepaymentList
+#SHSRC/MI/business/1/1/GetProductInformationList
+#SHSRC/MI/business/1/1/GetBusinessInformationList
+#SHSRC/MI/business/1/1/GetBusinessDetailedInformation
+#SHSRC/MI/business/1/1/ApplyPendingBusiness
+#SHSRC/MI/business/1/1/NotifyBusinessResults
+#SHSRC/MI/business/1/1/SubmitBusiness
+#SHSRC/MI/business/1/1/PostScriptResults
+
+#SHSRC/MI/TSM/1/1/PutApduScripts
+#SHSRC/MI/TSM/1/1/PostApduResults
+#SHSRC/MI/TSM/1/1/GetScriptsStatus
+#SHSRC/MI/TSM/1/1/CancelScripts

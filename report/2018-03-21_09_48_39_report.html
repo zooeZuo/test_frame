@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>接口自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>接口自动化测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-03-21 09:48:39</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:01.287000</p>
+<p class='attribute'><strong>Status:</strong> Pass 3 Failure 2</p>
+
+<p class='description'>接口测试</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_cases.UC_YX1714_MI_AP.ApplyPendingBusiness.test_01_master_ApplyPendingBusiness.TestApplyPendingBusiness</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_master_ApplyPendingBusiness</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        fail</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: [21/Mar/2018 09:48:39] request_handle.py line:69     DEBUG  &gt;&gt;&gt; Request URL: http://192.168.39.110:7001/SHSRC/MI/business/1/1/ApplyPendingBusiness
+[21/Mar/2018 09:48:39] request_handle.py line:70     DEBUG  &gt;&gt;&gt; Request Method: POST
+[21/Mar/2018 09:48:39] request_handle.py line:72     DEBUG  &gt;&gt;&gt; Request MI: 
+ {
+  "xmTransNum": "112233445566", 
+  "xmTransTime": "1463042578971", 
+  "extra": "", 
+  "deviceInfo": {
+    "cplc": "1234567899", 
+    "accountId": "112233445566", 
+    "deviceType": "4D692D35", 
+    "deviceId": "987654321", 
+    "seId": "23050102030409"
+  }, 
+  "ssdInfo": {
+    "sdAid": "A000000003464D53485453FF", 
+    "casdCertificate": "7f2181f17f2181ed931004401d1b6638800160210578979374714207637093010000175f2001009501825f24042115063045010053087ecc3e470923d52a5f378190690eb88b25fae69f2e3735a3c6349517f318a274213ee9a2998a7ad621aeefa80f1cf9288d40c3b41fdfa9f4a2f5046244c0d616ca67def04577ecaaf8798c85d0ed12f5470e8590cd8810d6bc1fc3e3f2138bf01cb2cab61eb37daf5f2d00cf699ab2bbe649357c83317851d2193648459cf0f34c353829ca4d7f2dfdca551775cab9ada193dc5077d33ce3d90d8c2c5f38208f56ba8efc8fb45ad8f8468e5fad1498ccf2b2fcd9f423eb413a774d608a4f85", 
+    "cipheredRgk": "907C14A1CDA61EA6CED411DFA90686B355C2FF665195742C6CFE8EB48883E6D35558EA71BFB43E3E089F959316B0F316AF91BD08C91E19E89A5CCA1A6E723BC168B7BC10A7160BFF3C519B8973F11E1415E9949CEF07E041F85A69FFDF59B0D4FE9426FE58E21F8E7A90BA3B83D73FB761AC57F48507390C5B5408BA3688B163AB11D95C8471E91A7F181F45858DADD39638914DF3009AD22F9ABD1F01B2B395AB8D4D39A8C400E65D1B2DCF93421132759F42B92CC7197ABF966E6A21E76A62374C92234C1A95FE87C9", 
+    "instanceAid": "A000000003869807012000", 
+    "counter": "0000", 
+    "cityId": "2000"
+  }, 
+  "authenticationCode": "03000001007001292000552305010203040927044D492035850CA000000003464D534854534D2409A0000000038698070191040100057A510E5352435F534354435F303030303155011089030020001101810905000000000199051605251375002588e4f74eb82ab1e7b411b3492024c435a4262d31c86154d45392211053add9cdceb85ed3f47dc881abee018e77b1a73b455da84c3369d6771cb8689882df0e100b6e0ac5ff19973591c82cb631b27bca4d7c75f7bfb40aab60edbb9c2bcdc2425c695b55088b9452567f6a1970c08a49223a4220c7517da3e3d0126394b27fe339dd1ac24218a52bc1335cf47cb979b7984bc3a6cea8c21b0eec654219936e916e4255a366f34fc8ff2d2b67dd23087b6cc4e91690bf14d8f8d3fdc6f9c3f6f3725b1780ed0e299e1162050d4ab69f62d85b474759d7fbbf951d3691781ebeaab57599354f03c312b7988975782e4241d0f66fb51c883457d4482a112de3cf"
+}
+[21/Mar/2018 09:48:39] connectionpool.py line:208    DEBUG  Starting new HTTP connection (1): 192.168.39.110
+[21/Mar/2018 09:48:39] connectionpool.py line:396    DEBUG  http://192.168.39.110:7001 "POST /SHSRC/MI/business/1/1/ApplyPendingBusiness HTTP/1.1" 200 None
+[21/Mar/2018 09:48:39] request_handle.py line:80     DEBUG  &lt;&lt;&lt; Status Code: 200
+[21/Mar/2018 09:48:39] request_handle.py line:83     DEBUG  &lt;&lt;&lt; Response content: 
+ {
+  "xmTransNum": "112233445566", 
+  "resultMsg": "Got exception when call other service", 
+  "xmTransTime": "1463042578971", 
+  "spTransTime": null, 
+  "SRCBusinessCode": null, 
+  "cardLinkingInfo": null, 
+  "resultCode": "0004", 
+  "spTransNum": null
+}
+[21/Mar/2018 09:48:39] request_handle.py line:84     DEBUG  &lt;&lt;&lt; resultCode: 
+ 0004
+[21/Mar/2018 09:48:39] ap_http_handle.py line:55     DEBUG  &gt;&gt;&gt; Response.status_code: 
+ 200
+[21/Mar/2018 09:48:39] test_01_master_ApplyPendingBusiness.py line:23     DEBUG  ApplyPendingBusiness Result &gt;&gt;&gt; &lt;Response [200]&gt;
+Traceback (most recent call last):
+  File "D:\test_frame\test_cases\UC_YX1714_MI_AP\ApplyPendingBusiness\test_01_master_ApplyPendingBusiness.py", line 29, in test_master_ApplyPendingBusiness
+    assert r['resultCode'] == '0000'
+AssertionError
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_cases.UC_YX1714_MI_AP.GetBusinessDetailedInformation.test_01_master_GetBusinessDetailedInformation.TestGetBusinessDetailedInformation</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_master_GetBusinessDetailedInformation</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        fail</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: [21/Mar/2018 09:48:39] request_handle.py line:69     DEBUG  &gt;&gt;&gt; Request URL: http://192.168.39.110:7001/SHSRC/MI/business/1/1/GetBusinessDetailedInformation
+[21/Mar/2018 09:48:39] request_handle.py line:70     DEBUG  &gt;&gt;&gt; Request Method: POST
+[21/Mar/2018 09:48:39] request_handle.py line:72     DEBUG  &gt;&gt;&gt; Request MI: 
+ {
+  "SRCBusinessCode": "3031323332", 
+  "extra": "", 
+  "deviceInfo": {
+    "cplc": "1234567899", 
+    "accountId": "112233445566", 
+    "deviceType": "4D492035", 
+    "deviceId": "987654321", 
+    "seId": "23050102030409"
+  }, 
+  "xmTransTime": "1463042578971", 
+  "xmTransNum": "112233445566"
+}
+[21/Mar/2018 09:48:39] connectionpool.py line:208    DEBUG  Starting new HTTP connection (1): 192.168.39.110
+[21/Mar/2018 09:48:39] connectionpool.py line:396    DEBUG  http://192.168.39.110:7001 "POST /SHSRC/MI/business/1/1/GetBusinessDetailedInformation HTTP/1.1" 200 None
+[21/Mar/2018 09:48:39] request_handle.py line:80     DEBUG  &lt;&lt;&lt; Status Code: 200
+[21/Mar/2018 09:48:39] request_handle.py line:83     DEBUG  &lt;&lt;&lt; Response content: 
+ {
+  "SRCBusinessDetailedInformation": null, 
+  "xmTransNum": "112233445566", 
+  "resultMsg": "The parameter is illegal", 
+  "xmTransTime": "1463042578971", 
+  "spTransTime": null, 
+  "cardLinkingInfo": null, 
+  "resultCode": "3002", 
+  "spTransNum": null
+}
+[21/Mar/2018 09:48:39] request_handle.py line:84     DEBUG  &lt;&lt;&lt; resultCode: 
+ 3002
+[21/Mar/2018 09:48:39] ap_http_handle.py line:46     DEBUG  &gt;&gt;&gt; Response.status_code: 
+ 200
+[21/Mar/2018 09:48:39] test_01_master_GetBusinessDetailedInformation.py line:24     DEBUG  GetBusinessDetailedInformation Result &gt;&gt;&gt; &lt;Response [200]&gt;
+Traceback (most recent call last):
+  File "D:\test_frame\test_cases\UC_YX1714_MI_AP\GetBusinessDetailedInformation\test_01_master_GetBusinessDetailedInformation.py", line 30, in test_master_GetBusinessDetailedInformation
+    assert r['resultCode'] == '0000'
+AssertionError
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_cases.UC_YX1714_MI_AP.GetBusinessInformationList.test_01_master_GetBusinessInformationList.TestGetBusinessInformationList</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_master_GetBusinessInformationList</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: [21/Mar/2018 09:48:39] request_handle.py line:69     DEBUG  &gt;&gt;&gt; Request URL: http://192.168.39.110:7001/SHSRC/MI/business/1/1/GetBusinessInformationList
+[21/Mar/2018 09:48:39] request_handle.py line:70     DEBUG  &gt;&gt;&gt; Request Method: POST
+[21/Mar/2018 09:48:39] request_handle.py line:72     DEBUG  &gt;&gt;&gt; Request MI: 
+ {
+  "xmTransNum": "112233445566", 
+  "deviceInfo": {
+    "cplc": "1234567899", 
+    "accountId": "112233445566", 
+    "deviceType": "4D492035", 
+    "deviceId": "987654321", 
+    "seId": "23050102030409"
+  }, 
+  "xmTransTime": "1463042578971", 
+  "extra": ""
+}
+[21/Mar/2018 09:48:39] connectionpool.py line:208    DEBUG  Starting new HTTP connection (1): 192.168.39.110
+[21/Mar/2018 09:48:39] connectionpool.py line:396    DEBUG  http://192.168.39.110:7001 "POST /SHSRC/MI/business/1/1/GetBusinessInformationList HTTP/1.1" 200 None
+[21/Mar/2018 09:48:39] request_handle.py line:80     DEBUG  &lt;&lt;&lt; Status Code: 200
+[21/Mar/2018 09:48:39] request_handle.py line:83     DEBUG  &lt;&lt;&lt; Response content: 
+ {
+  "xmTransNum": "112233445566", 
+  "resultMsg": "Success", 
+  "xmTransTime": "1463042578971", 
+  "spTransTime": "1521596919585", 
+  "resultCode": "0000", 
+  "businessInformationList": null, 
+  "spTransNum": "8888ee5b39ca4e94ac9f19ce59f19f85"
+}
+[21/Mar/2018 09:48:39] request_handle.py line:84     DEBUG  &lt;&lt;&lt; resultCode: 
+ 0000
+[21/Mar/2018 09:48:39] ap_http_handle.py line:38     DEBUG  &gt;&gt;&gt; Response.status_code: 
+ 200
+[21/Mar/2018 09:48:39] test_01_master_GetBusinessInformationList.py line:24     DEBUG  GetBusinessInformationList Result &gt;&gt;&gt; &lt;Response [200]&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_cases.UC_YX1714_MI_AP.GetPrepaymentList.test_01_master_GetPrepaymentList.TestGetPrepaymentList</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_master_GetPrepaymentList</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: [21/Mar/2018 09:48:39] request_handle.py line:69     DEBUG  &gt;&gt;&gt; Request URL: http://192.168.39.110:7001/SHSRC/MI/business/1/1/GetPrepaymentList
+[21/Mar/2018 09:48:39] request_handle.py line:70     DEBUG  &gt;&gt;&gt; Request Method: POST
+[21/Mar/2018 09:48:39] request_handle.py line:72     DEBUG  &gt;&gt;&gt; Request MI: 
+ {
+  "xmTransNum": "112233445566", 
+  "xmTransTime": "1463042578971", 
+  "extra": ""
+}
+[21/Mar/2018 09:48:39] connectionpool.py line:208    DEBUG  Starting new HTTP connection (1): 192.168.39.110
+[21/Mar/2018 09:48:40] connectionpool.py line:396    DEBUG  http://192.168.39.110:7001 "POST /SHSRC/MI/business/1/1/GetPrepaymentList HTTP/1.1" 200 None
+[21/Mar/2018 09:48:40] request_handle.py line:80     DEBUG  &lt;&lt;&lt; Status Code: 200
+[21/Mar/2018 09:48:40] request_handle.py line:83     DEBUG  &lt;&lt;&lt; Response content: 
+ {
+  "xmTransNum": "112233445566", 
+  "resultMsg": "Success", 
+  "xmTransTime": "1463042578971", 
+  "spTransTime": "1521596919993", 
+  "prepaymentList": [
+    {
+      "balance": "712000", 
+      "capitalAccount": "81", 
+      "creditLine": "0"
+    }
+  ], 
+  "resultCode": "0000", 
+  "spTransNum": "613e64843e8a44a1b221497d4dfeeeb0"
+}
+[21/Mar/2018 09:48:40] request_handle.py line:84     DEBUG  &lt;&lt;&lt; resultCode: 
+ 0000
+[21/Mar/2018 09:48:40] ap_http_handle.py line:23     DEBUG  &gt;&gt;&gt; Response.status_code: 
+ 200
+[21/Mar/2018 09:48:40] test_01_master_GetPrepaymentList.py line:22     DEBUG  GetPrepaymentList Result &gt;&gt;&gt; &lt;Response [200]&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_cases.UC_YX1714_MI_AP.GetProductInformationList.test_01_master_GetProductInformationList.TestGetProductInformationList</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_master_GetProductInformationList</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: [21/Mar/2018 09:48:40] request_handle.py line:69     DEBUG  &gt;&gt;&gt; Request URL: http://192.168.39.110:7001/SHSRC/MI/business/1/1/GetProductInformationList
+[21/Mar/2018 09:48:40] request_handle.py line:70     DEBUG  &gt;&gt;&gt; Request Method: POST
+[21/Mar/2018 09:48:40] request_handle.py line:72     DEBUG  &gt;&gt;&gt; Request MI: 
+ {
+  "xmTransNum": "112233445566", 
+  "xmTransTime": "1463042578971", 
+  "extra": ""
+}
+[21/Mar/2018 09:48:40] connectionpool.py line:208    DEBUG  Starting new HTTP connection (1): 192.168.39.110
+[21/Mar/2018 09:48:40] connectionpool.py line:396    DEBUG  http://192.168.39.110:7001 "POST /SHSRC/MI/business/1/1/GetProductInformationList HTTP/1.1" 200 None
+[21/Mar/2018 09:48:40] request_handle.py line:80     DEBUG  &lt;&lt;&lt; Status Code: 200
+[21/Mar/2018 09:48:40] request_handle.py line:83     DEBUG  &lt;&lt;&lt; Response content: 
+ {
+  "xmTransNum": "112233445566", 
+  "resultMsg": "Success", 
+  "xmTransTime": "1463042578971", 
+  "spTransTime": "1521596920226", 
+  "resultCode": "0000", 
+  "spTransNum": "406470f5c7ec479fb5da821e9d8cf40b", 
+  "productInformationList": [
+    {
+      "depositValue": "2500", 
+      "BPCode": "SRC_SCTC_00001", 
+      "BPName": "上海短租旅游卡20元面额", 
+      "stockStatus": "1", 
+      "BPDescription": "上海旅游卡20元面额短租卡最大15天有效期", 
+      "faceValue": "2000", 
+      "priceType": "2"
+    }, 
+    {
+      "depositValue": "2500", 
+      "BPCode": "SRC_SCTC_00002", 
+      "BPName": "上海短租旅游卡50元面额", 
+      "stockStatus": "1", 
+      "BPDescription": "上海旅游卡50元面额短租卡最大15天有效期", 
+      "faceValue": "5000", 
+      "priceType": "2"
+    }, 
+    {
+      "depositValue": "2500", 
+      "BPCode": "SRC_SCTC_00003", 
+      "BPName": "上海短租旅游卡100元面额", 
+      "stockStatus": "1", 
+      "BPDescription": "上海旅游卡100元面额短租卡最大15天有效期", 
+      "faceValue": "10000", 
+      "priceType": "2"
+    }
+  ]
+}
+[21/Mar/2018 09:48:40] request_handle.py line:84     DEBUG  &lt;&lt;&lt; resultCode: 
+ 0000
+[21/Mar/2018 09:48:40] ap_http_handle.py line:30     DEBUG  &gt;&gt;&gt; Response.status_code: 
+ 200
+[21/Mar/2018 09:48:40] test_01_master_GetProductInformationList.py line:23     DEBUG  GetProductInformationList Result &gt;&gt;&gt; &lt;Response [200]&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>5</td>
+    <td>3</td>
+    <td>2</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
